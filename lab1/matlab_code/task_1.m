@@ -34,6 +34,11 @@ opt = gramOptions('TimeIntervals',[0 t_1]);
 Gr_t_1 = gram(sys, 'c', opt);
 eig_Gr = eig(Gr_t_1);
 
-% input to lead state vector from 0 to x_1 diring time t_1
-syms t;
-u_x_1 = B'*expm(A'*(t_1-t))*inv(Gr_t_1)*x_1;
+% input to lead state vector from 0 to x_1 during time t_1
+syms t real;
+
+exp_a = expm(A'*(t_1-t));
+exp_a_simplify = simplify(exp_a, "Steps", 100);
+
+u_x_1 = B'*exp_a_simplify*inv(Gr_t_1)*x_1;
+u_x_1_simplify = simplify(u_x_1);
