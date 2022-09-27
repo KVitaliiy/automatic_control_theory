@@ -1,15 +1,22 @@
 %given data
 A = [1, -2, 3; 2, -3, 2; -2, 1, -4];
-B = [-3; -1; 3];
+B = [3; 1; -1];
 C = [0, 0, 0];
 D = 0;
 sys = ss(A, B, C, D);
 x_1 = [4; 3; -3];
+x_2 = [3; 3; -2];
 t_1 = 3;
 
 % Сontrollability matrix
 U = ctrb(sys);
 rank_U = rank(U);
+
+% Checking the state vector for belonging to the controllability subspace
+U_x_1 = [U, x_1];
+U_x_2 = [U, x_2];
+rank_U_x_1 = rank(U_x_1);
+rank_U_x_2 = rank(U_x_2);
 
 % System in Jordan basis (complex)
 [P_complex, A_jordan_complex] = eig(A);
@@ -36,9 +43,8 @@ eig_Gr = eig(Gr_t_1);
 
 % input to lead state vector from 0 to x_1 during time t_1
 syms t real;
-
 exp_a = expm(A'*(t_1-t));
 exp_a_simplify = simplify(exp_a, "Steps", 100);
 
-u_x_1 = B'*exp_a_simplify*inv(Gr_t_1)*x_1;
+u_x_1 = B'*exp_a_simplify*pinv(Gr_t_1)*x_1;
 u_x_1_simplify = simplify(u_x_1);
