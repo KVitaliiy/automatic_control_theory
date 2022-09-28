@@ -46,3 +46,22 @@ exp_a_simplify = simplify(exp_a, "Steps", 100);
 f = exp_a_simplify*C'*y_t;
 integral_f = int(f, t, 0, t_1);
 x_0 = double(pinv(Gr_t_1) * integral_f);
+
+% other initial conditions to lead state vector along the trajectory y(t) during time t_1
+% U*o = 0
+%o  = null(U);
+a = U*x_0;
+o = [1; 1; -1];
+
+x_1_0 = x_0 + o;
+x_2_0 = x_0 + 2* o;
+x_3_0 = x_0 + 3*o;
+
+a_1 = U*x_1_0;
+a_2 = U*x_2_0;
+a_3 = U*x_3_0;
+
+% checking
+syms t real;
+exp_a_n = simplify(expm(A*t), "Steps", 100);
+x = simplify(exp_a_n * x_0);

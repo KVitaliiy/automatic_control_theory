@@ -1,5 +1,10 @@
-y_check = out.y_check.Data;
-t = out.y_check.Time;
-plot(t, y_check);
+x1 = out.x1.Data;
+x2 = out.x2.Data;
+x3 = out.x3.Data;
+t = out.x1.Time;
+plot(t, x1);
+hold on;
+plot(t, x2);
+plot(t, x3);
 xlabel('t, sec');
-ylabel('y');
+legend;
