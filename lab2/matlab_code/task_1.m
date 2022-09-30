@@ -8,9 +8,8 @@ x_0 = [1; 1; 1; 1];
 eig_A = eig(A);
 
 % Finding the matrix Κ by given spectrum of matrix (A+BK)
-spectrum = [-6, -6, -6, -6];
 G1 = [-6, 0, 0, 0; 0, -3,  0, 0; 0, 0, -3, 5; 0, 0, -5, -3];
-Y1 = [1000, 100, 10, 1];
+Y1 = [1, 1, 1, 1];
 
 % Solving Sylvester's equations
 cvx_begin sdp

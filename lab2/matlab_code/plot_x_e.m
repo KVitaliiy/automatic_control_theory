@@ -1,0 +1,13 @@
+grid minor;
+hold on;
+x1 = out.x1.Data;
+t = out.x1.Time;
+plot(t, x1);
+x_1 = out.x_1.Data;
+t = out.x_1.Time;
+plot(t, x_1);
+e1 = out.e1.Data;
+t = out.e1.Time;
+plot(t, e1);
+xlabel('t, sec');
+legend('x1', 'x_1', 'e1');
