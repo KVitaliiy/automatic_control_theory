@@ -23,5 +23,5 @@ cvx_end
 % P is still root of Sylvester's equation 
 %Q(1, 1 ) = 1;
 
-%finding controller
+%finding observer
 L = inv(Q) * Y;
