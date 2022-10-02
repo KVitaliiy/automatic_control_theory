@@ -20,9 +20,7 @@ x_2_ = out.x_2_.Data(:,4);
 % a = 4
 t_3 = out.x_3.Time;
 x_3 = out.x_3.Data(:,4);
-plot(t_3, x_3);
+%plot(t_3, x_3);
 t_3_ = out.x_3_.Time;
 x_3_ = out.x_3_.Data(:,4);
-plot(t_3_, x_3_);
-
-legend('x4', 'x4hat');
+%plot(t_3_, x_3_);

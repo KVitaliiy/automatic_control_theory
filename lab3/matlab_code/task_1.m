@@ -8,6 +8,7 @@ x0 = [10; -15; 1; -5];
 % Desired decay rate
 a = [0.5, 2, 4];
 mu = [100, 200, 300];
+
 % Lyapunov inequality
 cvx_begin sdp;
 variable P(4,4);
