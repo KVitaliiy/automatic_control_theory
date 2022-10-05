@@ -5,7 +5,7 @@ x0 = [1000; -1000; 1000; -1000];
 C = eye(4);
 D = zeros(4, 2);
 %variable matrix
-Q_1 = 0.1*eye(4);
+Q_1 = eye(4);
 R_1 = 10*eye(2);
 
 Q_2 = 0.5*eye(4);

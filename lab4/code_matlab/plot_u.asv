@@ -2,12 +2,12 @@ grid minor;
 hold on;
 
 t_1 = out.u_1.Time;
-u_1 = out.u_1.Data(:,2);
+u_1 = out.j_1.Data;
 graph_1 = plot(t_1, u_1);
 graph_1.set('LineWidth', 1);
 
 t_2 = out.u_2.Time;
-u_2 = out.u_2.Data(:,2);
+u_2 = out.u_2.Data(:,1);
 graph_2 = plot(t_2, u_2);
 graph_2.set('LineWidth', 1);
 
