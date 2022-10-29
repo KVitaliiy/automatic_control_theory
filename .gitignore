@@ -2,3 +2,4 @@
 *.slxc
 ~$report.docx
 reports/
+*.asv
